@@ -1,10 +1,10 @@
 # Overview 
 An End-to-End **Data science salary predictor** project starting from scraping the data way to deploying the model.
 * Created a tool that estimates data science salaries.
-* Scraped up to 1000 data science job descriptions from glassdoor using python and selenium
-* Clean the scraped data and do some feature engineering on it.
+* Scraped up to 1000 data science job descriptions `from glassdoor` using python and selenium.
+* Clean the scraped data and do some `feature engineering` on it.
 * Optimized Decision Tree, Random Forest, boosted trees' Regressors using GridsearchCV to reach the best model. 
-* Built a client-facing API using flask 
+* Built a client-facing API using flask. 
 
 ## Code and Resources Used 
 
@@ -35,17 +35,16 @@ Tweaked the web scraper GitHub repo (above) to scrape 1000 job postings from gla
 ## `02` Data Cleaning
 After scraping the data, it needed to be cleaned so that I can feed it to the model. I made the following changes and created the following variables:
 
-* Parsed numeric data out of salary 
-* Made columns for employer-provided salary and hourly wages 
-
-* Parsed rating out of company text 
-* Made a new column for the company state 
-* Clean Company name column
-* Transformed the founded date into the age of the company 
-* Made columns for if different skills were listed in the job description:
-* Column for simplified job title and experience level 
-* Transformed competitors' names to their sum  
-* Transformed Hourly wages to annual
+- Parsed numeric data out of salary 
+- Made columns for employer-provided salary and hourly wages 
+- Parsed rating out of company text 
+- Made a new column for the company state 
+- Clean Company name column
+- Transformed the founded date into the age of the company 
+- Made columns for if different skills were listed in the job description:
+- Column for simplified job title and experience level 
+- Transformed competitors' names to their sum  
+- Transformed Hourly wages to annual
 
 ## `03` EDA
 I checked the distributions and Normality of the data and the value counts for the various categorical variables, and get some insights about the data for further use.
@@ -77,18 +76,21 @@ I used the following to track the model behavior:
 - Mean Absolute Error
 - Mean Squared Error 
 - R_Squared 
-- Adjusted R_Squared).
+- Adjusted R_Squared
 
 The Bagging model far outperformed the other approaches on the test and validation sets with 
 <center>
 
 |                       | Train Data      | Test Data |
 | -------               | :-------------: |:----:   |
-|   MSE                 | 319             | 863     |
-|   MAE                 | 12              | 20      |
-|  R_squared            | 0.89            | 0.72    |
-|  Adjusted R_squared   | 0.88            | 0.62    |
+|   MSE                 | 422             | 840     |
+|   MAE                 | 14              | 21      |
+|  R_squared            | 0.85            | 0.73    |
+|  Adjusted R_squared   | 0.84            | 0.69    |
 
+
+>**It's not the best output since I suffered from a little overfitting, but based on the number of samples we scraped, so far so good. 
+>However, it's better to increase the sample size** 
 
 </center>
 
