@@ -1,5 +1,5 @@
 # Overview 
-An End-to-End **Data science salary predictor** project starting from scraping the data way to deploying the model.
+### An End-to-End **Data science salary predictor** project starting from scraping the data way to deploying the model.
 * Created a tool that estimates data science salaries.
 * Scraped up to 1000 data science job descriptions `from glassdoor` using python and selenium.
 * Clean the scraped data and do some `feature engineering` on it.
